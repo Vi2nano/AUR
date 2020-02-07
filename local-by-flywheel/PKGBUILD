@@ -2,21 +2,20 @@
 # Maintainer: Jeffrey Jensen <jeffreyjensen1989@gmail.com>
 
 pkgname=local-by-flywheel
-pkgver=5.2.3
-myver=5-2-3
+pkgver=5-2-3
 pkgrel=1
 pkgdesc="A program to create a local WordPress development environment."
 arch=('x86_64')
 url="https://localbyflywheel.com/"
 license=('freemium')
-depends=('numactl ncurses5-compat-libs libaio')
+depends=('numactl' 'ncurses5-compat-libs' 'libaio')
 makedepends=('rpmextract')
 options=('emptydirs')
-source=("https://${pkgname}-flywheel.netdna-ssl.com/releases/${myver}/local-${myver}-linux.rpm")
-md5sums=('SKIP')
+source=("https://${pkgname}-flywheel.netdna-ssl.com/releases/${pkgver}/local-${pkgver}-linux.rpm")
+md5sums=('532e6c9825d9c6d495597c13fbfbcd3489b46401')
 
 package() {
-rpmextract.sh ../local-${myver}-linux.rpm
+rpmextract.sh ../local-${pkgver}-linux.rpm
 mv $srcdir/usr $pkgdir/ # /usr & /opt are top-level dirs in the package
 mv $srcdir/opt $pkgdir/
 chmod 4755 $pkgdir/opt/Local/chrome-sandbox
