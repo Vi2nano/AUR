@@ -1,0 +1,23 @@
+# Author: Mauricio López <mauricio.pronet@gmail.com>
+# Maintainer: Jeffrey Jensen <jeffreyjensen1989@gmail.com>
+
+pkgname=local-by-flywheel
+pkgver=5.2.3
+pkgrel=1
+pkgdesc="A program to create a local WordPress development environment."
+arch=('x86_64')
+url="https://localbyflywheel.com/"
+license=('freemium')
+depends=('numactl ncurses5-compat-libs')
+makedepends=('rpmextract')
+options=('emptydirs')
+source=("https://local-by-flywheel-flywheel.netdna-ssl.com/releases/5-2-3/local-5-2-3-linux.rpm")
+md5sums=('SKIP')
+
+package() {
+rpmextract.sh ../local-5-2-3-linux.rpm
+mv $srcdir/usr $pkgdir/ # /usr & /opt are top-level dirs in the package
+mv $srcdir/opt $pkgdir/
+chmod 4755 $pkgdir/opt/Local/chrome-sandbox
+chmod 755 $pkgdir/opt/Local/local
+}
