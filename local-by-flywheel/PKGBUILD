@@ -12,7 +12,7 @@ depends=('numactl' 'ncurses5-compat-libs' 'libaio')
 makedepends=('rpmextract')
 options=('emptydirs')
 source=("https://${pkgname}-flywheel.netdna-ssl.com/releases/${pkgver}/local-${pkgver}-linux.rpm")
-md5sums=('SKIP')
+md5sums=('3a09832df177fec72b8b8bd41f5f7c3b')
 
 package() {
 rpmextract.sh ../local-${pkgver}-linux.rpm
