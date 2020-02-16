@@ -2,7 +2,7 @@
 # Maintainer: Jeffrey Jensen <jeffreyjensen1989@gmail.com>
 
 pkgname=local-by-flywheel
-pkgver=5-2-3
+pkgver=5-2-4
 pkgrel=1
 pkgdesc="A program to create a local WordPress development environment."
 arch=('x86_64')
