@@ -2,8 +2,8 @@
 # Maintainer: Jeffrey Jensen <jeffreyjensen1989@gmail.com>
 
 pkgname=local-by-flywheel
-mypkgver=5-2-4
-pkgver=5.2.4
+mypkgver=5-2-5
+pkgver=5.2.5
 pkgrel=1
 pkgdesc="A program to create a local WordPress development environment."
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('numactl' 'ncurses5-compat-libs' 'libaio')
 makedepends=('rpmextract')
 options=('emptydirs')
 source=("https://${pkgname}-flywheel.netdna-ssl.com/releases/${mypkgver}/local-${mypkgver}-linux.rpm")
-md5sums=('3a09832df177fec72b8b8bd41f5f7c3b')
+md5sums=('d5b681062c79c0b9cad33248a56918ce')
 
 package() {
 rpmextract.sh ../local-${mypkgver}-linux.rpm
